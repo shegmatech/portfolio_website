@@ -11,7 +11,7 @@ if($_POST)
 
     $mail = new PHPMailer();
 
-    $your_email = "youremail@website.com";
+    $your_email = "shegmatech@gmail.com";
 
 
     //check if its an ajax request, exit if not
@@ -268,7 +268,7 @@ if($_POST)
 
     //Server settings
 //    $mail->isSMTP();                                            // Send using SMTP
-//    $mail->Host       = 'smtp.googlemail.com';                    // Set the SMTP server to send through
+      $mail->Host       = 'smtp.googlemail.com';                    // Set the SMTP server to send through
 //    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
 //    $mail->Username   = 'website@gmail.com';                     // SMTP username
 //    $mail->Password   = 'your password';                         // SMTP password
