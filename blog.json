@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Building Scalable React Applications",
+    "excerpt": "Learn the best practices for building large-scale React applications that are maintainable and performant. We'll cover component architecture, state management, and optimization techniques.",
+    "content": "Building scalable React applications requires careful planning and adherence to best practices. In this comprehensive guide, we'll explore the key principles that separate amateur React code from professional, maintainable applications.\n\n## Component Architecture\n\nThe foundation of any scalable React application lies in its component architecture. Start by establishing clear boundaries between your components and following the single responsibility principle. Each component should have one clear purpose and be easily testable in isolation.\n\n## State Management\n\nAs your application grows, managing state becomes increasingly complex. Consider using established patterns like Redux for global state management, or newer solutions like Zustand for simpler use cases. The key is consistency across your application.\n\n## Performance Optimization\n\nOptimization should be built into your development process from the start. Use React.memo, useMemo, and useCallback judiciously, implement code splitting with React.lazy, and always measure performance before and after optimizations.\n\n## Testing Strategy\n\nA robust testing strategy is essential for maintainable applications. Implement unit tests for individual components, integration tests for user workflows, and end-to-end tests for critical paths through your application.",
+    "date": "2025-07-20",
+    "tags": ["React", "JavaScript", "Architecture"],
+    "published": true
+  },
+  {
+    "id": 2,
+    "title": "The Future of Web Development",
+    "excerpt": "Exploring emerging trends in web development including WebAssembly, serverless architecture, and the evolution of JavaScript frameworks.",
+    "content": "The web development landscape is evolving at an unprecedented pace. As we look toward the future, several key trends are shaping how we build and deploy web applications.\n\n## WebAssembly Revolution\n\nWebAssembly (WASM) is transforming what's possible in the browser. By allowing languages like Rust, C++, and Go to run at near-native speeds in web browsers, WASM is opening up new possibilities for compute-intensive applications that were previously impossible on the web.\n\n## Serverless Architecture\n\nServerless computing is changing how we think about backend development. With platforms like Vercel, Netlify, and AWS Lambda, developers can focus on writing code without worrying about server management. This shift is making web development more accessible and cost-effective.\n\n## Framework Evolution\n\nJavaScript frameworks continue to evolve rapidly. React introduced concurrent features, Vue.js 3 brought composition API, and new frameworks like SvelteKit and Solid.js are pushing the boundaries of performance and developer experience.\n\n## Edge Computing\n\nEdge computing is bringing computation closer to users, reducing latency and improving performance. This trend is particularly important for global applications and real-time features.\n\n## The Rise of TypeScript\n\nTypeScript has become the de facto standard for large-scale JavaScript applications, providing type safety and better developer tooling that scales with team size and codebase complexity.",
+    "date": "2025-07-15",
+    "tags": ["Web Development", "Trends", "Future"],
+    "published": true
+  },
+  {
+    "id": 3,
+    "title": "CSS Grid vs Flexbox: When to Use What",
+    "excerpt": "A comprehensive guide to understanding the differences between CSS Grid and Flexbox, with practical examples and use cases for each layout method.",
+    "content": "CSS Grid and Flexbox are two powerful layout systems that have revolutionized web design. While they can sometimes achieve similar results, each has its own strengths and ideal use cases.\n\n## Understanding the Fundamentals\n\n**Flexbox** is designed for one-dimensional layouts. It excels at distributing space along a single axis (either horizontal or vertical) and is perfect for component-level layout needs.\n\n**CSS Grid** is built for two-dimensional layouts. It allows you to create complex layouts with both rows and columns, making it ideal for page-level layout structures.\n\n## When to Use Flexbox\n\nFlexbox is your go-to choice for:\n- Navigation bars and menus\n- Card layouts within a container\n- Centering content vertically and horizontally\n- Distributing space between items\n- Creating responsive button groups\n\n## When to Use CSS Grid\n\nCSS Grid shines in these scenarios:\n- Overall page layout (header, sidebar, main content, footer)\n- Complex card layouts with varying sizes\n- Magazine-style layouts\n- Any layout where you need precise control over both dimensions\n\n## Combining Both Technologies\n\nThe real power comes from combining both technologies. Use CSS Grid for your overall page structure and Flexbox for component-level layouts within grid areas.\n\n## Practical Examples\n\nLet's look at some practical examples of how to implement common layout patterns using both technologies, and understand why one might be preferred over the other in specific situations.",
+    "date": "2025-07-10",
+    "tags": ["CSS", "Layout", "Design"],
+    "published": true
+  }
+]

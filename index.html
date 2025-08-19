@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Olusegun Adesina</title>
+
+  <!-- SEO basics -->
+  <meta name="description" content="Olusegun Adesina – IT Auditor & Developer. Projects, blog, skills, and contact." />
+  <meta name="theme-color" content="#2563eb" />
+
+  <!-- Social preview -->
+  <meta property="og:title" content="Olusegun Adesina" />
+  <meta property="og:description" content="IT Auditor & Developer. Projects, blog, skills, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="olusegun.jpg" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/main2.css" />
+
+  <!-- Defer scripts for performance -->
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container container">
+      <a href="#" class="logo">Olusegun Adesina</a>
+
+      <!-- Mobile menu toggle -->
+      <button class="mobile-menu-toggle" id="mobile-toggle"
+              aria-label="Toggle navigation" aria-expanded="false"
+              aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <!-- No inline JS; JS binds by id -->
+          <a href="#" id="download-cv-link" class="nav-link cta">📄 Download CV</a>
+        </li>
+      </ul>
+    </div>
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-content container">
+      <div class="hero-visual">
+        <div class="hero-image">
+          <img src="olusegun.jpg" alt="Olusegun A Adesina">
+        </div>
+      </div>
+
+      <div class="hero-text">
+        <h2>HELLO, I AM</h2>
+        <h1>OLUSEGUN A. ADESINA</h1>
+        <p>
+          Experienced IT Auditor and Controls Expert with deep knowledge of IT Governance, Risk Management,
+          and Compliance frameworks. Combining proficiency in Data Analysis, Python Development,
+          and Flutter Mobile App Development, I design and implement audit automation solutions to enhance IT control efficiency.
+        </p>
+        <a href="#projects" class="cta-button">View My Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills (radial) -->
+  <section id="skills">
+    <div class="section-header">
+      <h2>Skills</h2>
+      <p>A quick snapshot of my core skills.</p>
+    </div>
+    <div class="container">
+      <div class="skills-radials" id="skills-grid">
+        <div class="skill-radial" data-value="95" data-label="IT Audit & GRC">
+          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
+          <div class="skill-caption">IT Audit & GRC</div>
+          <div class="skill-note">Governance, Risk, Compliance</div>
+        </div>
+        <div class="skill-radial" data-value="90" data-label="ISO 27001 / 22301">
+          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
+          <div class="skill-caption">ISO 27001 / 22301</div>
+          <div class="skill-note">ISMS & BCMS</div>
+        </div>
+        <div class="skill-radial" data-value="90" data-label="Python">
+          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
+          <div class="skill-caption">Python</div>
+          <div class="skill-note">Automation & Data</div>
+        </div>
+        <div class="skill-radial" data-value="85" data-label="FastAPI">
+          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
+          <div class="skill-caption">FastAPI</div>
+          <div class="skill-note">APIs & Services</div>
+        </div>
+        <div class="skill-radial" data-value="85" data-label="SQL / Data Analysis">
+          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
+          <div class="skill-caption">SQL / Data Analysis</div>
+          <div class="skill-note">Insights & Reporting</div>
+        </div>
+        <div class="skill-radial" data-value="80" data-label="Flutter">
+          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
+          <div class="skill-caption">Flutter</div>
+          <div class="skill-note">Mobile Apps</div>
+        </div>
+        <div class="skill-radial" data-value="75" data-label="JavaScript">
+          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
+          <div class="skill-caption">JavaScript</div>
+          <div class="skill-note">Web Engineering</div>
+        </div>
+        <div class="skill-radial" data-value="70" data-label="Power Automate">
+          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
+          <div class="skill-caption">Power Automate</div>
+          <div class="skill-note">Workflow & RPA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="section-header">
+      <h2>Featured Projects</h2>
+      <p>A collection of recent work showcasing my skills in web development, design, and problem-solving.</p>
+    </div>
+    <div id="projects-container" class="container">
+      <div class="loading"><div class="spinner" aria-hidden="true"></div></div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog">
+    <div class="section-header">
+      <h2>Latest Blog Posts</h2>
+      <p>Thoughts, tutorials, and insights from my journey in technology and development.</p>
+    </div>
+    <div id="blog-container" class="container">
+      <div class="loading"><div class="spinner" aria-hidden="true"></div></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-header">
+      <h2>Contact Me</h2>
+      <p class="muted">Send me a message—this opens WhatsApp; you can also email me.</p>
+    </div>
+    <div class="container">
+      <div class="contact-form-wrap">
+        <form id="whatsapp-form" novalidate>
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="name">Full Name <span class="req">*</span></label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email (optional)</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" />
+            </div>
+          </div>
+
+          <div class="form-row form-row--mt">
+            <label for="message">Message <span class="req">*</span></label>
+            <textarea id="message" name="message" placeholder="Tell me a bit about your project or request..." required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">💬 Send via WhatsApp</button>
+            <button type="button" id="email-instead" class="btn btn-ghost">✉️ Send Email Instead</button>
+            <label class="inline hint">
+              <input type="checkbox" id="also-email" checked />
+              Also email this message
+            </label>
+          </div>
+          <div class="hint">If WhatsApp doesn’t open, use “Send Email Instead.”</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="site-footer">
+    <div class="footer-content container">
+      <div class="social-links">
+        <a href="#" class="social-link" title="GitHub">💻</a>
+        <a href="#" class="social-link" title="LinkedIn">💼</a>
+        <a href="#" class="social-link" title="Twitter">🐦</a>
+        <a href="#" class="social-link" title="Email">📧</a>
+      </div>
+      <p>&copy; 2025 Your Portfolio. Crafted with passion and precision.</p>
+    </div>
+  </footer>
+
+  <!-- Blog Post Modal -->
+  <div id="post-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="post-modal-title">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-dialog" role="document" tabindex="-1">
+      <button class="modal-close" id="modal-close" aria-label="Close post">&times;</button>
+      <article class="modal-body">
+        <h3 id="post-modal-title" class="modal-title"></h3>
+        <div class="modal-meta" id="post-modal-meta"></div>
+        <div class="modal-content" id="post-modal-content"></div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Contact / CV Modal -->
+  <div id="contact-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-dialog" role="document" tabindex="-1" style="max-width: 520px;">
+      <button class="modal-close" id="contact-close" aria-label="Close contact">&times;</button>
+      <article class="modal-body">
+        <h3 id="contact-modal-title" class="modal-title">Get My CV</h3>
+        <p class="muted">Reach out and I’ll send it right away.</p>
+
+        <div class="contact-row">
+          <span>📧</span>
+          <code id="contact-email">projects@olusegunabiola.xyz</code>
+          <button class="copy-btn" id="copy-email" title="Copy email">Copy</button>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="stack">
+          <a id="whatsapp-button" href="#" target="_blank" rel="noopener" class="btn btn-primary">💬 Contact on WhatsApp</a>
+          <a id="mailto-button" href="#" class="btn btn-ghost">✉️ Email Me</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

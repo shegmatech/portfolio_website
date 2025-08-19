@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "E-Commerce Platform",
+    "description": "A modern e-commerce platform built with React and Node.js, featuring real-time inventory management and secure payment processing.",
+    "image": "",
+    "technologies": ["React", "Node.js", "MongoDB", "Stripe"],
+    "githubUrl": "https://github.com/yourusername/ecommerce",
+    "liveUrl": "https://demo.example.com",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Task Management App",
+    "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+    "image": "",
+    "technologies": ["Vue.js", "Express", "Socket.io", "PostgreSQL"],
+    "githubUrl": "https://github.com/yourusername/taskapp",
+    "liveUrl": "https://tasks.example.com",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Weather Dashboard",
+    "description": "A responsive weather dashboard that provides detailed weather information with beautiful visualizations and location-based forecasts.",
+    "image": "",
+    "technologies": ["JavaScript", "Chart.js", "Weather API", "CSS Grid"],
+    "githubUrl": "https://github.com/yourusername/weather",
+    "liveUrl": "https://weather.example.com",
+    "featured": false
+  }
+]
