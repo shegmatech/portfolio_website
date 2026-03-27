@@ -2,241 +2,912 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-  <title>Olusegun Adesina</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olusegun Adesina | IT Auditor &amp; Software Developer</title>
 
-  <!-- SEO basics -->
-  <meta name="description" content="Olusegun Adesina – IT Auditor & Developer. Projects, blog, skills, and contact." />
-  <meta name="theme-color" content="#2563eb" />
+  <!-- SEO -->
+  <meta name="description" content="Olusegun Abiola Adesina — IT Audit &amp; Control Officer at Africa Prudential Plc. ISO 27001/22301/9001/42001 Lead Auditor. Python &amp; FastAPI developer. CEO Award 2025." />
+  <meta name="theme-color" content="#00647b" />
+  <link rel="canonical" href="https://olusegunadesina.xyz" />
 
-  <!-- Social preview -->
-  <meta property="og:title" content="Olusegun Adesina" />
-  <meta property="og:description" content="IT Auditor & Developer. Projects, blog, skills, and contact." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Olusegun Adesina | IT Auditor &amp; Software Developer" />
+  <meta property="og:description" content="Senior IT Auditor, ISO Lead Auditor &amp; Developer. CEO Employee of the Year 2025." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="olusegun.jpg" />
+  <meta property="og:url" content="https://olusegunadesina.xyz" />
+  <meta property="og:image" content="olusegun.webp" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/main2.css" />
+  <!-- Font preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Defer scripts for performance -->
+  <!-- Fonts: Manrope + Inter + Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN with forms plugin -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'surface':                  '#f9f6f5',
+            'surface-dim':              '#d6d4d3',
+            'surface-container-lowest': '#ffffff',
+            'surface-container-low':    '#f3f0ef',
+            'surface-container':        '#eae7e7',
+            'surface-container-high':   '#e5e2e1',
+            'surface-container-highest':'#dfdcdc',
+            'on-surface':               '#2f2e2e',
+            'on-surface-variant':       '#5c5b5b',
+            'inverse-surface':          '#0e0e0e',
+            'inverse-on-surface':       '#9e9c9c',
+            'primary':                  '#00647b',
+            'primary-dim':              '#00576c',
+            'on-primary':               '#e2f6ff',
+            'primary-container':        '#00cffc',
+            'on-primary-container':     '#004050',
+            'on-primary-fixed':         '#002a35',
+            'secondary':                '#5c5b5b',
+            'on-secondary':             '#f5f2f1',
+            'secondary-container':      '#e5e2e1',
+            'on-secondary-fixed-variant':'#5c5b5b',
+            'outline':                  '#787676',
+            'outline-variant':          '#afacac',
+            'error':                    '#b31b25',
+          },
+          fontFamily: {
+            'headline': ['Manrope', 'sans-serif'],
+            'body':     ['Inter', 'sans-serif'],
+            'label':    ['Inter', 'sans-serif'],
+          },
+          borderRadius: {
+            'DEFAULT': '0.25rem',
+            'lg':  '0.5rem',
+            'xl':  '0.75rem',
+            '2xl': '1rem',
+            '3xl': '1.5rem',
+            'full':'9999px',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom CSS (keyframes, JS-injected content, modals, mobile menu) -->
+  <link rel="stylesheet" href="css/portfolio.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Olusegun Abiola Adesina",
+    "jobTitle": "IT Audit & Control Officer",
+    "url": "https://olusegunadesina.xyz",
+    "email": "shegmatech@gmail.com",
+    "telephone": "+2347036792585",
+    "address": { "@type": "PostalAddress", "addressLocality": "Lagos", "addressCountry": "NG" },
+    "knowsAbout": ["IT Audit", "ISO 27001", "ISO 22301", "Python", "FastAPI", "GRC"]
+  }
+  </script>
+
   <script defer src="js/app.js"></script>
 </head>
-<body>
-  <!-- Navigation -->
-  <nav id="navbar">
-    <div class="nav-container container">
-      <a href="#" class="logo">Olusegun Adesina</a>
 
-      <!-- Mobile menu toggle -->
-      <button class="mobile-menu-toggle" id="mobile-toggle"
-              aria-label="Toggle navigation" aria-expanded="false"
-              aria-controls="nav-links">
-        <span></span><span></span><span></span>
-      </button>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
 
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#blog" class="nav-link">Blog</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+  <!-- Scroll Progress -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Mobile Overlay -->
+  <div id="mobile-overlay" class="hidden fixed inset-0 bg-black/50 z-40"></div>
+
+  <!-- ============================================================
+       NAV
+       ============================================================ -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-sm transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 py-4 flex justify-between items-center">
+
+      <!-- Logo -->
+      <a href="#home" class="nav-link font-headline text-xl font-bold tracking-tighter text-on-surface hover:text-primary transition-colors">
+        PORTFOLIO
+      </a>
+
+      <!-- Nav links — mobile: fixed side drawer; desktop: inline flex -->
+      <ul id="nav-links"
+          class="fixed top-0 right-0 h-screen w-72 bg-white z-50
+                 flex flex-col gap-5 pt-24 px-8
+                 translate-x-full transition-transform duration-300 shadow-xl
+                 md:static md:h-auto md:w-auto md:flex-row md:gap-8 md:items-center
+                 md:translate-x-0 md:bg-transparent md:shadow-none md:pt-0 md:px-0 md:z-auto
+                 list-none">
+        <li><a href="#home"           class="nav-link font-headline font-semibold text-sm text-on-surface-variant hover:text-primary transition-colors">Home</a></li>
+        <li><a href="#skills"         class="nav-link font-headline font-semibold text-sm text-on-surface-variant hover:text-primary transition-colors">Skills</a></li>
+        <li><a href="#experience"     class="nav-link font-headline font-semibold text-sm text-on-surface-variant hover:text-primary transition-colors">Experience</a></li>
+        <li><a href="#certifications" class="nav-link font-headline font-semibold text-sm text-on-surface-variant hover:text-primary transition-colors">Certifications</a></li>
+        <li><a href="#projects"       class="nav-link font-headline font-semibold text-sm text-on-surface-variant hover:text-primary transition-colors">Projects</a></li>
+        <li><a href="#blog"           class="nav-link font-headline font-semibold text-sm text-on-surface-variant hover:text-primary transition-colors">Blog</a></li>
+        <li><a href="#contact"        class="nav-link font-headline font-semibold text-sm text-on-surface-variant hover:text-primary transition-colors">Contact</a></li>
         <li>
-          <!-- No inline JS; JS binds by id -->
-          <a href="#" id="download-cv-link" class="nav-link cta">📄 Download CV</a>
+          <a id="download-cv-link" href="#"
+             class="nav-link inline-block px-5 py-2 bg-primary text-on-primary rounded-full font-headline font-semibold text-sm hover:opacity-90 active:scale-95 transition-all">
+            Download CV
+          </a>
         </li>
       </ul>
+
+      <!-- Mobile hamburger -->
+      <button id="mobile-toggle"
+              class="md:hidden p-2 rounded-lg text-on-surface hover:bg-surface-container transition-colors"
+              aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="material-symbols-outlined icon-menu text-2xl">menu</span>
+        <span class="material-symbols-outlined icon-close text-2xl">close</span>
+      </button>
     </div>
-    <div class="mobile-overlay" id="mobile-overlay"></div>
   </nav>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="hero-content container">
-      <div class="hero-visual">
-        <div class="hero-image">
-          <img src="olusegun.jpg" alt="Olusegun A Adesina">
-        </div>
-      </div>
+  <main>
 
-      <div class="hero-text">
-        <h2>HELLO, I AM</h2>
-        <h1>OLUSEGUN A. ADESINA</h1>
-        <p>
-          Experienced IT Auditor and Controls Expert with deep knowledge of IT Governance, Risk Management,
-          and Compliance frameworks. Combining proficiency in Data Analysis, Python Development,
-          and Flutter Mobile App Development, I design and implement audit automation solutions to enhance IT control efficiency.
-        </p>
-        <a href="#projects" class="cta-button">View My Work</a>
-      </div>
-    </div>
-  </section>
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section id="home" class="min-h-screen bg-surface pt-24 pb-16 px-6 md:px-8 flex items-center">
+      <div class="max-w-7xl mx-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-  <!-- Skills (radial) -->
-  <section id="skills">
-    <div class="section-header">
-      <h2>Skills</h2>
-      <p>A quick snapshot of my core skills.</p>
-    </div>
-    <div class="container">
-      <div class="skills-radials" id="skills-grid">
-        <div class="skill-radial" data-value="95" data-label="IT Audit & GRC">
-          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
-          <div class="skill-caption">IT Audit & GRC</div>
-          <div class="skill-note">Governance, Risk, Compliance</div>
-        </div>
-        <div class="skill-radial" data-value="90" data-label="ISO 27001 / 22301">
-          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
-          <div class="skill-caption">ISO 27001 / 22301</div>
-          <div class="skill-note">ISMS & BCMS</div>
-        </div>
-        <div class="skill-radial" data-value="90" data-label="Python">
-          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
-          <div class="skill-caption">Python</div>
-          <div class="skill-note">Automation & Data</div>
-        </div>
-        <div class="skill-radial" data-value="85" data-label="FastAPI">
-          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
-          <div class="skill-caption">FastAPI</div>
-          <div class="skill-note">APIs & Services</div>
-        </div>
-        <div class="skill-radial" data-value="85" data-label="SQL / Data Analysis">
-          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
-          <div class="skill-caption">SQL / Data Analysis</div>
-          <div class="skill-note">Insights & Reporting</div>
-        </div>
-        <div class="skill-radial" data-value="80" data-label="Flutter">
-          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
-          <div class="skill-caption">Flutter</div>
-          <div class="skill-note">Mobile Apps</div>
-        </div>
-        <div class="skill-radial" data-value="75" data-label="JavaScript">
-          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
-          <div class="skill-caption">JavaScript</div>
-          <div class="skill-note">Web Engineering</div>
-        </div>
-        <div class="skill-radial" data-value="70" data-label="Power Automate">
-          <div class="radial"><div class="radial-inset"><div class="radial-value">0%</div></div></div>
-          <div class="skill-caption">Power Automate</div>
-          <div class="skill-note">Workflow & RPA</div>
-        </div>
-      </div>
-    </div>
-  </section>
+          <!-- Left: Text -->
+          <div class="lg:col-span-7 space-y-6">
 
-  <!-- Projects -->
-  <section id="projects">
-    <div class="section-header">
-      <h2>Featured Projects</h2>
-      <p>A collection of recent work showcasing my skills in web development, design, and problem-solving.</p>
-    </div>
-    <div id="projects-container" class="container">
-      <div class="loading"><div class="spinner" aria-hidden="true"></div></div>
-    </div>
-  </section>
-
-  <!-- Blog -->
-  <section id="blog">
-    <div class="section-header">
-      <h2>Latest Blog Posts</h2>
-      <p>Thoughts, tutorials, and insights from my journey in technology and development.</p>
-    </div>
-    <div id="blog-container" class="container">
-      <div class="loading"><div class="spinner" aria-hidden="true"></div></div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <div class="section-header">
-      <h2>Contact Me</h2>
-      <p class="muted">Send me a message—this opens WhatsApp; you can also email me.</p>
-    </div>
-    <div class="container">
-      <div class="contact-form-wrap">
-        <form id="whatsapp-form" novalidate>
-          <div class="form-grid">
-            <div class="form-row">
-              <label for="name">Full Name <span class="req">*</span></label>
-              <input type="text" id="name" name="name" placeholder="Your full name" required />
+            <!-- Available badge -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 bg-surface-container rounded-full">
+              <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              <span class="font-label text-xs font-semibold uppercase tracking-widest text-on-surface-variant">Available for new opportunities</span>
             </div>
-            <div class="form-row">
-              <label for="email">Email (optional)</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" />
+
+            <!-- Label -->
+            <p class="font-label text-xs uppercase tracking-[0.2em] text-primary font-semibold">Hello, I Am</p>
+
+            <!-- Name — JS splits into .char spans -->
+            <h1 id="hero-name"
+                class="font-headline text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-on-surface leading-none">
+              Olusegun Adesina
+            </h1>
+
+            <!-- Typewriter -->
+            <p class="font-body text-lg md:text-xl text-on-surface-variant">
+              I'm a <span id="hero-typewriter" class="text-primary font-semibold"></span><span class="typewriter-cursor text-primary font-semibold">|</span>
+            </p>
+
+            <!-- Bio -->
+            <p class="font-body text-base md:text-lg text-on-surface-variant leading-relaxed max-w-xl">
+              IT Audit &amp; Control Officer at Africa Prudential Plc. ISO 27001, 22301, 9001 &amp; 42001 Lead Auditor. Python &amp; FastAPI developer building automation tools for audit and compliance. CEO Employee of the Year 2025.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a href="#projects" class="nav-link px-8 py-3.5 bg-primary text-on-primary rounded-full font-headline font-bold hover:opacity-90 active:scale-95 transition-all">
+                View My Work
+              </a>
+              <a href="#contact" class="nav-link px-8 py-3.5 border border-outline-variant/30 text-on-surface rounded-full font-headline font-semibold hover:bg-surface-container transition-all">
+                Get In Touch
+              </a>
+            </div>
+
+            <!-- Inline stats row -->
+            <div class="flex flex-wrap gap-6 pt-6 border-t border-outline-variant/10">
+              <div>
+                <div class="font-headline text-2xl font-extrabold text-on-surface">7+</div>
+                <div class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Years Exp.</div>
+              </div>
+              <div class="hidden sm:block w-px bg-outline-variant/20 self-stretch"></div>
+              <div>
+                <div class="font-headline text-2xl font-extrabold text-on-surface">9</div>
+                <div class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Certifications</div>
+              </div>
+              <div class="hidden sm:block w-px bg-outline-variant/20 self-stretch"></div>
+              <div>
+                <div class="font-headline text-2xl font-extrabold text-on-surface">100+</div>
+                <div class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Exceptions Tracked</div>
+              </div>
+              <div class="hidden sm:block w-px bg-outline-variant/20 self-stretch"></div>
+              <div>
+                <div class="font-headline text-xl font-extrabold text-primary">🏆 CEO Award</div>
+                <div class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">2025 Winner</div>
+              </div>
             </div>
           </div>
 
-          <div class="form-row form-row--mt">
-            <label for="message">Message <span class="req">*</span></label>
-            <textarea id="message" name="message" placeholder="Tell me a bit about your project or request..." required></textarea>
+          <!-- Right: Photo -->
+          <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
+            <!-- Decorative cyan blur -->
+            <div class="absolute -top-12 -right-8 w-56 h-56 bg-primary-container/25 rounded-full blur-3xl pointer-events-none"></div>
+            <!-- Decorative tinted block behind photo -->
+            <div class="absolute top-6 right-0 w-4/5 h-full bg-surface-container rounded-3xl -z-10"></div>
+
+            <div class="relative w-72 sm:w-80 lg:w-full max-w-sm">
+              <picture>
+                <source srcset="olusegun.webp" type="image/webp" />
+                <img src="olusegun.webp"
+                     alt="Olusegun Abiola Adesina — IT Auditor &amp; Developer"
+                     fetchpriority="high"
+                     class="w-full h-auto rounded-2xl shadow-[0_20px_60px_rgba(47,46,46,0.14)] object-cover" />
+              </picture>
+              <!-- Floating badge -->
+              <div class="absolute -bottom-4 -right-4 bg-primary text-on-primary px-4 py-3 rounded-2xl shadow-lg">
+                <div class="font-headline font-extrabold text-sm leading-tight">🏆 CEO Award</div>
+                <div class="font-label text-[10px] opacity-75">Employee of the Year 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll hint -->
+        <div class="mt-16 flex justify-center">
+          <a href="#skills" class="nav-link flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+            <span class="font-label text-[10px] uppercase tracking-widest">Scroll to explore</span>
+            <span class="material-symbols-outlined animate-bounce">keyboard_arrow_down</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SKILLS
+         ============================================================ -->
+    <section id="skills" class="bg-surface-container-low py-24 px-6 md:px-8">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- Section header -->
+        <div class="mb-16">
+          <div class="flex items-baseline gap-4 mb-3">
+            <span class="font-label text-xs font-mono text-outline/50">01</span>
+            <span class="font-label text-xs uppercase tracking-[0.2em] text-primary font-semibold">Expertise</span>
+          </div>
+          <h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter text-on-surface">Core Skills</h2>
+        </div>
+
+        <!-- 4-col bento grid on desktop, 2-col tablet, 1-col mobile -->
+        <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+          <div class="bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 hover:shadow-[0_20px_40px_rgba(47,46,46,0.06)]">
+            <span class="material-symbols-outlined text-primary text-4xl mb-4 block">shield</span>
+            <h3 class="font-headline text-base font-bold text-on-surface mb-2">IT Audit &amp; GRC</h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed">Governance, Risk &amp; Compliance — designing audit frameworks and exception management systems.</p>
           </div>
 
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">💬 Send via WhatsApp</button>
-            <button type="button" id="email-instead" class="btn btn-ghost">✉️ Send Email Instead</button>
-            <label class="inline hint">
-              <input type="checkbox" id="also-email" checked />
-              Also email this message
-            </label>
+          <div class="bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 hover:shadow-[0_20px_40px_rgba(47,46,46,0.06)]">
+            <span class="material-symbols-outlined text-primary text-4xl mb-4 block">verified</span>
+            <h3 class="font-headline text-base font-bold text-on-surface mb-2">ISO Lead Auditor</h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed">Certified for ISO 27001, 22301, 9001 &amp; 42001 — ISMS, BCMS, QMS &amp; AI-MS.</p>
           </div>
-          <div class="hint">If WhatsApp doesn’t open, use “Send Email Instead.”</div>
-        </form>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer id="site-footer">
-    <div class="footer-content container">
-      <div class="social-links">
-        <a href="#" class="social-link" title="GitHub">💻</a>
-        <a href="#" class="social-link" title="LinkedIn">💼</a>
-        <a href="#" class="social-link" title="Twitter">🐦</a>
-        <a href="#" class="social-link" title="Email">📧</a>
+          <div class="bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 hover:shadow-[0_20px_40px_rgba(47,46,46,0.06)]">
+            <span class="material-symbols-outlined text-primary text-4xl mb-4 block">code</span>
+            <h3 class="font-headline text-base font-bold text-on-surface mb-2">Python Development</h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed">Automation scripts, data pipelines, and audit tooling with Python, pandas &amp; Selenium.</p>
+          </div>
+
+          <div class="bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 hover:shadow-[0_20px_40px_rgba(47,46,46,0.06)]">
+            <span class="material-symbols-outlined text-primary text-4xl mb-4 block">bolt</span>
+            <h3 class="font-headline text-base font-bold text-on-surface mb-2">FastAPI &amp; REST</h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed">High-performance web APIs and backend services with FastAPI, SQLAlchemy &amp; PostgreSQL.</p>
+          </div>
+
+          <div class="bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 hover:shadow-[0_20px_40px_rgba(47,46,46,0.06)]">
+            <span class="material-symbols-outlined text-primary text-4xl mb-4 block">storage</span>
+            <h3 class="font-headline text-base font-bold text-on-surface mb-2">SQL &amp; Data Analysis</h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed">Querying and reporting from large datasets for audit intelligence and business insights.</p>
+          </div>
+
+          <div class="bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 hover:shadow-[0_20px_40px_rgba(47,46,46,0.06)]">
+            <span class="material-symbols-outlined text-primary text-4xl mb-4 block">smartphone</span>
+            <h3 class="font-headline text-base font-bold text-on-surface mb-2">Flutter Apps</h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed">Cross-platform mobile application development using Flutter and Dart for iOS &amp; Android.</p>
+          </div>
+
+          <div class="bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 hover:shadow-[0_20px_40px_rgba(47,46,46,0.06)]">
+            <span class="material-symbols-outlined text-primary text-4xl mb-4 block">security</span>
+            <h3 class="font-headline text-base font-bold text-on-surface mb-2">Cybersecurity</h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed">Vulnerability assessments with Burp Suite, JMeter performance testing, and security reviews.</p>
+          </div>
+
+          <div class="bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300 hover:shadow-[0_20px_40px_rgba(47,46,46,0.06)]">
+            <span class="material-symbols-outlined text-primary text-4xl mb-4 block">integration_instructions</span>
+            <h3 class="font-headline text-base font-bold text-on-surface mb-2">JavaScript</h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed">Full-stack web engineering — dynamic UIs, REST API integration, and browser automation.</p>
+          </div>
+
+        </div>
       </div>
-      <p>&copy; 2025 Your Portfolio. Crafted with passion and precision.</p>
+    </section>
+
+    <!-- ============================================================
+         EXPERIENCE
+         ============================================================ -->
+    <section id="experience" class="bg-surface py-24 px-6 md:px-8">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- Section header -->
+        <div class="mb-16">
+          <div class="flex items-baseline gap-4 mb-3">
+            <span class="font-label text-xs font-mono text-outline/50">02</span>
+            <span class="font-label text-xs uppercase tracking-[0.2em] text-primary font-semibold">Career</span>
+          </div>
+          <h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter text-on-surface">Professional Experience</h2>
+        </div>
+
+        <!-- Bento grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          <!-- Africa Prudential — featured [col-span-2] -->
+          <div class="lg:col-span-2 bg-surface-container-lowest p-8 md:p-10 rounded-xl hover:bg-surface-container-high transition-colors duration-300 hover:shadow-[0_20px_40px_rgba(47,46,46,0.06)]">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+              <div>
+                <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary font-semibold">Africa Prudential Plc &bull; Aug 2022 &mdash; Present</span>
+                <h3 class="font-headline text-2xl font-bold text-on-surface mt-1">IT Audit &amp; Control Officer</h3>
+              </div>
+              <div class="bg-surface-container p-3 rounded-xl flex-shrink-0">
+                <span class="material-symbols-outlined text-primary text-3xl">manage_accounts</span>
+              </div>
+            </div>
+            <ul class="space-y-3 text-on-surface-variant text-sm md:text-base leading-relaxed mb-8">
+              <li class="flex gap-3">
+                <span class="text-primary mt-0.5 flex-shrink-0">▸</span>
+                <span>Developed Automated audit exception reminder system — reduced overdue exceptions by <strong class="text-on-surface font-semibold">40%</strong> and improved cross-department resolution times.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary mt-0.5 flex-shrink-0">▸</span>
+                <span>Audited ISO 27001, 9001 and 22301, achieving <strong class="text-on-surface font-semibold">20% reduction</strong> in cybersecurity risk exposure and maintaining compliance across all IT controls, regulatory and operational requirements.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary mt-0.5 flex-shrink-0">▸</span>
+                <span>Developed an automated script for Corporate TIN validation using the Firs verification portal
+(https://apps.firs.gov.ng/tinverification) <strong class="text-on-surface font-semibold">to validate over 10,000 Corporate TIN for ease of remittance
+and data enrichment</strong> </span>
+              </li>
+            </ul>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">ISO 27001</span>
+              <span class="px-3 py-1.5 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">ISO 9001</span>
+              <span class="px-3 py-1.5 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">ISO 22301</span>
+              <span class="px-3 py-1.5 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">Python</span>
+              <span class="px-3 py-1.5 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">GRC</span>
+              <span class="px-3 py-1.5 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">IT Audit</span>
+              <span class="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold">🏆 CEO Award 2025</span>
+            </div>
+          </div>
+
+          <!-- Decorative visual card [col-span-1] -->
+          <div class="lg:col-span-1 bg-surface-container rounded-xl overflow-hidden relative min-h-[240px] flex flex-col justify-end">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary to-primary-container/80"></div>
+            <div class="relative z-10 p-8">
+              <span class="material-symbols-outlined text-white text-5xl mb-3 block"
+                    style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">workspace_premium</span>
+              <p class="font-headline text-white font-bold text-xl leading-snug">Building secure, compliant digital infrastructure.</p>
+            </div>
+          </div>
+
+          <!-- GIIA -->
+          <div class="bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300">
+            <div class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5">
+              <span class="material-symbols-outlined text-primary">school</span>
+            </div>
+            <h3 class="font-headline text-lg font-bold text-on-surface">ISO &amp; Audit Analytics Facilitator</h3>
+            <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mt-1 mb-4">GIIA &bull; Jan 2026 &mdash; Present (on-demand Facilitator)</p>
+            <ul class="space-y-2 text-sm text-on-surface-variant">
+              <li class="flex gap-2"><span class="text-primary flex-shrink-0">▸</span>Teaching ISO standards, audit principles &amp; data analytics to professionals</li>
+              <li class="flex gap-2"><span class="text-primary flex-shrink-0">▸</span>Bridging theoretical frameworks with practical audit tools and real cases</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-outline-variant/10 flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">ISO Standards</span>
+              <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">Training</span>
+            </div>
+          </div>
+
+          <!-- SLP Consulting -->
+          <div class="bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300">
+            <div class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5">
+              <span class="material-symbols-outlined text-primary">fact_check</span>
+            </div>
+            <h3 class="font-headline text-lg font-bold text-on-surface">ISO Auditor (Project based)</h3>
+            <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mt-1 mb-4">SLP Consulting &bull; Jan 2024 &mdash; Present</p>
+            <ul class="space-y-2 text-sm text-on-surface-variant">
+              <li class="flex gap-2"><span class="text-primary flex-shrink-0">▸</span>Conducting ISO compliance audits for client organizations across sectors</li>
+              <li class="flex gap-2"><span class="text-primary flex-shrink-0">▸</span>Gap analysis and management system implementation advisory support</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-outline-variant/10 flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">ISO Auditing</span>
+              <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">Consulting</span>
+            </div>
+          </div>
+
+          <!-- BEDC -->
+          <div class="bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300">
+            <div class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5">
+              <span class="material-symbols-outlined text-primary">bar_chart</span>
+            </div>
+            <h3 class="font-headline text-lg font-bold text-on-surface">Data Analyst / Supervisor</h3>
+            <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mt-1 mb-4">BEDC &bull; Nov 2017 &mdash; Jul 2022</p>
+            <ul class="space-y-2 text-sm text-on-surface-variant">
+              <li class="flex gap-2"><span class="text-primary flex-shrink-0">▸</span>developed and deployed a Low-Code application that improved data collection efficiency
+by 40% using Microsoft Power Platform</li>
+              <li class="flex gap-2"><span class="text-primary flex-shrink-0">▸</span>Supervised data quality operations and Excel-based reporting pipelines</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-outline-variant/10 flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">Data Analysis</span>
+              <span class="px-3 py-1 bg-surface-container rounded-full text-xs font-semibold text-on-surface-variant">Python</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CERTIFICATIONS
+         ============================================================ -->
+    <section id="certifications" class="bg-surface-container-low py-24 px-6 md:px-8">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- Section header -->
+        <div class="mb-16">
+          <div class="flex items-baseline gap-4 mb-3">
+            <span class="font-label text-xs font-mono text-outline/50">03</span>
+            <span class="font-label text-xs uppercase tracking-[0.2em] text-primary font-semibold">Credentials</span>
+          </div>
+          <h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter text-on-surface">Certifications</h2>
+        </div>
+
+        <!-- Certs bento grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+          <!-- CISA — featured [col-span-2] -->
+          <div class="cert-card md:col-span-2 bg-surface-container-lowest p-8 rounded-xl
+                      flex flex-col sm:flex-row gap-6 items-start sm:items-center
+                      hover:bg-surface-container-high transition-colors duration-300
+                      hover:shadow-[0_20px_40px_rgba(47,46,46,0.06)]" style="--i:0">
+            <div class="flex-shrink-0 bg-primary/10 w-20 h-20 rounded-2xl flex items-center justify-center">
+              <span class="material-symbols-outlined text-primary text-4xl"
+                    style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">verified</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-2">
+                <span class="px-3 py-1 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-widest rounded-full">Gold Standard</span>
+                <span class="font-label text-xs text-outline uppercase tracking-widest">ISACA &bull; 2026</span>
+              </div>
+              <h3 class="font-headline text-xl md:text-2xl font-bold text-on-surface">Certified Information Systems Auditor</h3>
+              <p class="font-body text-sm text-on-surface-variant mt-1">CISA&reg; — The globally recognized gold standard for IS audit, control, and security professionals.</p>
+            </div>
+          </div>
+
+          <!-- ISO 27001 Lead Auditor -->
+          <div class="cert-card bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300" style="--i:1">
+            <div class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5">
+              <span class="material-symbols-outlined text-primary">security</span>
+            </div>
+            <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold block mb-1">TUVSUD &bull; 2023</span>
+            <h3 class="font-headline text-base font-bold text-on-surface">ISO 27001:2022 Lead Auditor</h3>
+            <p class="font-body text-xs text-on-surface-variant mt-1">Information Security Management Systems</p>
+          </div>
+
+          <!-- ISO 22301 Lead Auditor -->
+          <div class="cert-card bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300" style="--i:2">
+            <div class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5">
+              <span class="material-symbols-outlined text-primary">backup</span>
+            </div>
+            <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold block mb-1">TUVSUD &bull; 2024</span>
+            <h3 class="font-headline text-base font-bold text-on-surface">ISO 22301:2019 Lead Auditor</h3>
+            <p class="font-body text-xs text-on-surface-variant mt-1">Business Continuity Management Systems</p>
+          </div>
+
+          <!-- ISO 9001 Lead Auditor -->
+          <div class="cert-card bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300" style="--i:3">
+            <div class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5">
+              <span class="material-symbols-outlined text-primary">workspace_premium</span>
+            </div>
+            <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold block mb-1">TUVSUD &bull; 2024</span>
+            <h3 class="font-headline text-base font-bold text-on-surface">ISO 9001:2015 Lead Auditor</h3>
+            <p class="font-body text-xs text-on-surface-variant mt-1">Quality Management Systems</p>
+          </div>
+
+          <!-- ISO 42001 Lead Auditor -->
+          <div class="cert-card bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300" style="--i:4">
+            <div class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5">
+              <span class="material-symbols-outlined text-primary">smart_toy</span>
+            </div>
+            <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold block mb-1">MasterMind &bull; 2025</span>
+            <h3 class="font-headline text-base font-bold text-on-surface">ISO 42001 Lead Auditor</h3>
+            <p class="font-body text-xs text-on-surface-variant mt-1">Artificial Intelligence Management Systems</p>
+          </div>
+
+          <!-- ISO 14001 Internal Auditor -->
+          <div class="cert-card bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300" style="--i:5">
+            <div class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5">
+              <span class="material-symbols-outlined text-primary">eco</span>
+            </div>
+            <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold block mb-1">BROADBEACH &bull; 2026</span>
+            <h3 class="font-headline text-base font-bold text-on-surface">ISO 14001:2015 Internal Auditor</h3>
+            <p class="font-body text-xs text-on-surface-variant mt-1">Environmental Management Systems</p>
+          </div>
+
+
+          <!-- ISO 45001 Internal Auditor -->
+          <div class="cert-card bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors duration-300" style="--i:5">
+            <div class="bg-primary/10 w-12 h-12 rounded-xl flex items-center justify-center mb-5">
+              <span class="material-symbols-outlined text-primary">health_and_safety</span>
+            </div>
+            <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold block mb-1">BROADBEACH &bull; 2026</span>
+            <h3 class="font-headline text-base font-bold text-on-surface">ISO 45001:2018 Internal Auditor</h3>
+            <p class="font-body text-xs text-on-surface-variant mt-1">Occupational Health and Safety Management Systems</p>
+          </div>
+
+          <!-- CISM -->
+          <!-- <div class="cert-card md:col-span-3 bg-surface-container-lowest p-8 rounded-xl flex flex-col sm:flex-row gap-5 items-start sm:items-center hover:bg-surface-container-high transition-colors duration-300" style="--i:6">
+            <div class="bg-primary/10 w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center">
+              <span class="material-symbols-outlined text-primary">manage_accounts</span>
+            </div>
+            <div>
+              <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold block mb-1">ISACA &bull; In Progress</span>
+              <h3 class="font-headline text-base font-bold text-on-surface">CISM — Certified Information Security Manager</h3>
+              <p class="font-body text-xs text-on-surface-variant mt-1">Pursuing the information security management certification to complement existing CISA credential.</p>
+            </div>
+          </div> -->
+
+        </div>
+
+        <!-- Micro-credentials -->
+        <div class="mt-10">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="flex-1 h-px bg-outline-variant/20"></div>
+            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-outline">Additional Qualifications</span>
+            <div class="flex-1 h-px bg-outline-variant/20"></div>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-surface-container-lowest rounded-full font-label text-xs text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-default">IS Auditing &mdash; HKUST (Coursera)</span>
+            <span class="px-4 py-2 bg-surface-container-lowest rounded-full font-label text-xs text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-default">Advanced Excel Skills for Business Essentials &mdash; Macquarie University</span>
+            <span class="px-4 py-2 bg-surface-container-lowest rounded-full font-label text-xs text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-default">Python for Everybody &mdash; Michigan</span>
+            <!-- <span class="px-4 py-2 bg-surface-container-lowest rounded-full font-label text-xs text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-default">SQL for Data Science &mdash; UC Davis</span> -->
+            <!-- <span class="px-4 py-2 bg-surface-container-lowest rounded-full font-label text-xs text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-default">Cybersecurity Essentials &mdash; Cisco</span> -->
+            <!-- <span class="px-4 py-2 bg-surface-container-lowest rounded-full font-label text-xs text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-default">Flutter &amp; Dart &mdash; Complete Guide</span> -->
+          </div>
+        </div>
+
+        <!-- Dark CTA block -->
+        <div class="mt-16 bg-on-surface text-surface rounded-3xl p-10 md:p-16 text-center">
+          <h2 class="font-headline text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Ready to see the full picture?</h2>
+          <p class="font-body text-base mb-8 max-w-lg mx-auto" style="color:#9e9c9c">Download my complete CV with all experience, certifications, and achievements in detail.</p>
+          <button onclick="openContactModal()"
+                  class="px-10 py-4 bg-primary-container font-headline font-bold rounded-full hover:opacity-90 active:scale-95 transition-all"
+                  style="color:#002a35">
+            Download Full CV
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS
+         ============================================================ -->
+    <section id="projects" class="bg-surface py-24 px-6 md:px-8">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="mb-16">
+          <div class="flex items-baseline gap-4 mb-3">
+            <span class="font-label text-xs font-mono text-outline/50">04</span>
+            <span class="font-label text-xs uppercase tracking-[0.2em] text-primary font-semibold">Work</span>
+          </div>
+          <h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter text-on-surface">Featured Projects</h2>
+        </div>
+
+        <!-- JS renders project cards here -->
+        <div id="projects-container"></div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BLOG
+         ============================================================ -->
+    <section id="blog" class="bg-surface-container-low py-24 px-6 md:px-8">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="mb-16">
+          <div class="flex items-baseline gap-4 mb-3">
+            <span class="font-label text-xs font-mono text-outline/50">05</span>
+            <span class="font-label text-xs uppercase tracking-[0.2em] text-primary font-semibold">Insights</span>
+          </div>
+          <h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter text-on-surface">Latest Articles</h2>
+        </div>
+
+        <!-- JS renders blog cards here -->
+        <div id="blog-container"></div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STATS / IMPACT
+         ============================================================ -->
+    <section id="stats" class="bg-surface py-24 px-6 md:px-8">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="mb-16">
+          <div class="flex items-baseline gap-4 mb-3">
+            <span class="font-label text-xs font-mono text-outline/50">06</span>
+            <span class="font-label text-xs uppercase tracking-[0.2em] text-primary font-semibold">Recognition</span>
+          </div>
+          <h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter text-on-surface">Impact &amp; Awards</h2>
+        </div>
+
+        <!-- Bento impact grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-12 gap-5">
+
+          <!-- CEO Award — featured -->
+          <div class="award-card col-span-2 lg:col-span-5 bg-primary text-on-primary rounded-xl p-10 flex flex-col justify-between min-h-[240px]" style="--i:0">
+            <span class="material-symbols-outlined text-4xl"
+                  style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; color:rgba(226,246,255,0.6);">star</span>
+            <div>
+              <h3 class="font-headline text-2xl md:text-3xl font-extrabold tracking-tight leading-tight mb-2 mt-6">CEO Employee<br/>of the Year</h3>
+              <p class="font-body text-sm" style="color:rgba(226,246,255,0.7)">Africa Prudential Plc &bull; 2025</p>
+            </div>
+          </div>
+
+          <!-- 20% Breach Reduction -->
+          <div class="award-card col-span-2 sm:col-span-1 lg:col-span-3 bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors" style="--i:1">
+            <span class="material-symbols-outlined text-primary text-3xl">shield</span>
+            <div class="mt-6">
+              <div class="font-headline text-4xl font-extrabold text-on-surface">20%</div>
+              <p class="font-body text-sm text-on-surface-variant mt-1">Reduction in cybersecurity risk via ISO 27001 ISMS implementation</p>
+            </div>
+          </div>
+
+          <!-- 1M+ QR Codes -->
+          <div class="award-card col-span-2 sm:col-span-1 lg:col-span-4 bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors" style="--i:2">
+            <span class="material-symbols-outlined text-primary text-3xl">qr_code_2</span>
+            <div class="mt-6">
+              <div class="font-headline text-4xl font-extrabold text-on-surface">1M+</div>
+              <p class="font-body text-sm text-on-surface-variant mt-1">QR codes generated for Power Asset Tracking</p>
+            </div>
+          </div>
+
+          <!-- Counter: Years -->
+          <div class="stat-item col-span-1 lg:col-span-3 bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors text-center" data-count="7">
+            <div class="font-headline font-extrabold text-primary leading-none">
+              <span class="stat-value text-5xl">0</span><span class="text-2xl">+</span>
+            </div>
+            <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mt-3">Years Experience</p>
+          </div>
+
+          <!-- Counter: Certs -->
+          <div class="stat-item col-span-1 lg:col-span-3 bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors text-center" data-count="9">
+            <div class="font-headline font-extrabold text-primary leading-none">
+              <span class="stat-value text-5xl">0</span>
+            </div>
+            <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mt-3">Certifications</p>
+          </div>
+
+          <!-- Counter: Exceptions -->
+          <div class="stat-item col-span-1 lg:col-span-3 bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors text-center" data-count="100">
+            <div class="font-headline font-extrabold text-primary leading-none">
+              <span class="stat-value text-5xl">0</span><span class="text-2xl">+</span>
+            </div>
+            <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mt-3">Exceptions Tracked</p>
+          </div>
+
+          <!-- Counter: Reduction -->
+          <div class="stat-item col-span-1 lg:col-span-3 bg-surface-container-lowest p-8 rounded-xl hover:bg-surface-container-high transition-colors text-center" data-count="40">
+            <div class="font-headline font-extrabold text-primary leading-none">
+              <span class="stat-value text-5xl">0</span><span class="text-2xl">%</span>
+            </div>
+            <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mt-3">Exception Reduction</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+         ============================================================ -->
+    <section id="contact" class="bg-surface-container-low py-24 px-6 md:px-8">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- Section header -->
+        <div class="mb-16">
+          <span class="font-label text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-4 block">07 &mdash; Get In Touch</span>
+          <h2 class="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter text-on-surface leading-none">
+            Let's build something<br/>
+            <span class="text-primary italic">extraordinary</span> together.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
+
+          <!-- Info column -->
+          <div class="lg:col-span-5 flex flex-col justify-between">
+            <div>
+              <p class="font-body text-lg text-on-surface-variant leading-relaxed mb-12 max-w-md">
+                Currently available for IT audit engagements, ISO consultancy, training, and development project collaboration worldwide.
+              </p>
+
+              <div class="space-y-8">
+                <div>
+                  <h3 class="font-label text-[10px] uppercase tracking-[0.2em] text-outline mb-2">Primary Email</h3>
+                  <a href="mailto:shegmatech@gmail.com"
+                     class="font-headline text-xl font-bold text-on-surface hover:text-primary transition-colors block underline decoration-outline-variant decoration-1 underline-offset-8">
+                    shegmatech@gmail.com
+                  </a>
+                </div>
+                <div>
+                  <h3 class="font-label text-[10px] uppercase tracking-[0.2em] text-outline mb-2">WhatsApp</h3>
+                  <a href="https://wa.me/2347036792585" target="_blank" rel="noopener"
+                     class="font-headline text-xl font-bold text-on-surface hover:text-primary transition-colors block">
+                    +234 703 679 2585
+                  </a>
+                </div>
+                <div>
+                  <h3 class="font-label text-[10px] uppercase tracking-[0.2em] text-outline mb-2">Location</h3>
+                  <p class="font-headline text-xl font-bold text-on-surface">Lagos, Nigeria<br/>
+                    <span class="font-body text-base font-medium text-on-surface-variant">WAT (UTC+1)</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social links -->
+            <div class="mt-16 pt-10 border-t border-outline-variant/10">
+              <h3 class="font-label text-[10px] uppercase tracking-[0.2em] text-outline mb-6">Digital Presence</h3>
+              <div class="flex flex-wrap gap-8">
+                <a href="https://linkedin.com/in/adesinaoa" target="_blank" rel="noopener"
+                   class="font-label text-sm uppercase tracking-widest text-on-surface hover:text-primary transition-colors flex items-center gap-2 group">
+                  LinkedIn <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_outward</span>
+                </a>
+                <a href="https://github.com/shegmatech" target="_blank" rel="noopener"
+                   class="font-label text-sm uppercase tracking-widest text-on-surface hover:text-primary transition-colors flex items-center gap-2 group">
+                  GitHub <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_outward</span>
+                </a>
+                <a href="https://wa.me/2347036792585" target="_blank" rel="noopener"
+                   class="font-label text-sm uppercase tracking-widest text-on-surface hover:text-primary transition-colors flex items-center gap-2 group">
+                  WhatsApp <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form column -->
+          <div class="lg:col-span-7">
+            <div class="bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-[0_20px_40px_rgba(47,46,46,0.06)]">
+              <form id="whatsapp-form" class="space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label for="name" class="block font-label text-[10px] uppercase tracking-widest text-outline mb-3">Full Name</label>
+                    <input id="name" name="name" type="text" placeholder="John Doe" required
+                           class="w-full bg-transparent border-0 border-b border-outline-variant/30 py-3 px-0 focus:ring-0 focus:border-primary focus:outline-none text-on-surface placeholder:text-outline-variant transition-all font-body text-base" />
+                  </div>
+                  <div>
+                    <label for="email" class="block font-label text-[10px] uppercase tracking-widest text-outline mb-3">Email Address</label>
+                    <input id="email" name="email" type="email" placeholder="john@example.com"
+                           class="w-full bg-transparent border-0 border-b border-outline-variant/30 py-3 px-0 focus:ring-0 focus:border-primary focus:outline-none text-on-surface placeholder:text-outline-variant transition-all font-body text-base" />
+                  </div>
+                </div>
+                <div>
+                  <label for="message" class="block font-label text-[10px] uppercase tracking-widest text-outline mb-3">Your Message</label>
+                  <textarea id="message" name="message" rows="5"
+                            placeholder="Briefly describe your project or inquiry..."
+                            required
+                            class="w-full bg-transparent border-0 border-b border-outline-variant/30 py-3 px-0 focus:ring-0 focus:border-primary focus:outline-none text-on-surface placeholder:text-outline-variant transition-all font-body text-base resize-none"></textarea>
+                </div>
+                <div class="flex items-center gap-3">
+                  <input id="also-email" name="also-email" type="checkbox"
+                         class="rounded border-outline-variant text-primary focus:ring-primary focus:ring-offset-0" />
+                  <label for="also-email" class="font-label text-xs text-on-surface-variant cursor-pointer">Also send a copy to my email</label>
+                </div>
+                <div class="flex flex-wrap gap-4 pt-2">
+                  <button type="submit"
+                          class="px-8 py-4 bg-primary text-on-primary rounded-full font-headline font-bold hover:opacity-90 active:scale-95 transition-all flex items-center gap-2">
+                    Send via WhatsApp
+                    <span class="material-symbols-outlined text-xl">send</span>
+                  </button>
+                  <button type="button" id="email-instead"
+                          class="px-8 py-4 border border-outline-variant/30 text-on-surface rounded-full font-headline font-semibold hover:bg-surface-container transition-all">
+                    Email Instead
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Trust note -->
+            <div class="mt-6 flex items-center gap-3 px-2">
+              <span class="material-symbols-outlined text-primary"
+                    style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">verified_user</span>
+              <p class="text-sm text-on-surface-variant">Your message goes directly to Olusegun — no middleman.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer id="site-footer" class="bg-on-surface py-16 px-6 md:px-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+      <div>
+        <div class="font-headline text-lg font-bold text-surface mb-1">Olusegun Abiola Adesina</div>
+        <div class="font-body text-xs uppercase tracking-widest text-inverse-on-surface">IT Auditor &amp; Software Developer</div>
+      </div>
+      <div class="font-body text-sm text-inverse-on-surface">&copy; 2025 All rights reserved.</div>
+      <div class="flex gap-8">
+        <a href="https://github.com/shegmatech" target="_blank" rel="noopener"
+           class="font-body text-xs uppercase tracking-widest text-inverse-on-surface hover:text-primary-container transition-colors">GitHub</a>
+        <a href="https://linkedin.com/in/adesinaoa" target="_blank" rel="noopener"
+           class="font-body text-xs uppercase tracking-widest text-inverse-on-surface hover:text-primary-container transition-colors">LinkedIn</a>
+        <a href="mailto:shegmatech@gmail.com"
+           class="font-body text-xs uppercase tracking-widest text-inverse-on-surface hover:text-primary-container transition-colors">Email</a>
+        <a href="https://wa.me/2347036792585" target="_blank" rel="noopener"
+           class="font-body text-xs uppercase tracking-widest text-inverse-on-surface hover:text-primary-container transition-colors">WhatsApp</a>
+      </div>
     </div>
   </footer>
 
-  <!-- Blog Post Modal -->
-  <div id="post-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="post-modal-title">
-    <div class="modal-backdrop" data-close="true"></div>
+  <!-- ============================================================
+       BLOG POST MODAL
+       ============================================================ -->
+  <div id="post-modal" class="modal-overlay" aria-hidden="true"
+       role="dialog" aria-modal="true" aria-labelledby="post-modal-title" data-close="true">
     <div class="modal-dialog" role="document" tabindex="-1">
-      <button class="modal-close" id="modal-close" aria-label="Close post">&times;</button>
-      <article class="modal-body">
-        <h3 id="post-modal-title" class="modal-title"></h3>
-        <div class="modal-meta" id="post-modal-meta"></div>
-        <div class="modal-content" id="post-modal-content"></div>
-      </article>
+      <div class="flex justify-between items-start mb-6">
+        <div class="flex-1 pr-4">
+          <h2 id="post-modal-title" class="font-headline text-2xl font-bold text-on-surface"></h2>
+          <p id="post-modal-meta" class="font-label text-xs text-on-surface-variant uppercase tracking-widest mt-2"></p>
+        </div>
+        <button id="modal-close" class="text-on-surface-variant hover:text-on-surface transition-colors flex-shrink-0" aria-label="Close">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <div id="post-modal-content" class="font-body text-on-surface-variant leading-relaxed text-sm"></div>
     </div>
   </div>
 
-  <!-- Contact / CV Modal -->
-  <div id="contact-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
-    <div class="modal-backdrop" data-close="true"></div>
-    <div class="modal-dialog" role="document" tabindex="-1" style="max-width: 520px;">
-      <button class="modal-close" id="contact-close" aria-label="Close contact">&times;</button>
-      <article class="modal-body">
-        <h3 id="contact-modal-title" class="modal-title">Get My CV</h3>
-        <p class="muted">Reach out and I’ll send it right away.</p>
-
-        <div class="contact-row">
-          <span>📧</span>
-          <code id="contact-email">projects@olusegunabiola.xyz</code>
-          <button class="copy-btn" id="copy-email" title="Copy email">Copy</button>
-        </div>
-
-        <div class="spacer"></div>
-
-        <div class="stack">
-          <a id="whatsapp-button" href="#" target="_blank" rel="noopener" class="btn btn-primary">💬 Contact on WhatsApp</a>
-          <a id="mailto-button" href="#" class="btn btn-ghost">✉️ Email Me</a>
-        </div>
-      </article>
+  <!-- ============================================================
+       CONTACT / CV MODAL
+       ============================================================ -->
+  <div id="contact-modal" class="modal-overlay" aria-hidden="true"
+       role="dialog" aria-modal="true" aria-labelledby="contact-modal-heading" data-close="true">
+    <div class="modal-dialog" role="document" tabindex="-1">
+      <div class="flex justify-between items-start mb-6">
+        <h2 id="contact-modal-heading" class="font-headline text-2xl font-bold text-on-surface">Get My CV</h2>
+        <button id="contact-close" class="text-on-surface-variant hover:text-on-surface transition-colors" aria-label="Close">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <p class="font-body text-on-surface-variant mb-8 leading-relaxed">
+        Request my full CV via email or WhatsApp. I'll respond promptly with the latest version.
+      </p>
+      <div class="bg-surface-container p-4 rounded-xl flex items-center justify-between mb-8">
+        <span id="contact-email" class="font-body text-on-surface font-medium text-sm break-all"></span>
+        <button id="copy-email" class="ml-4 flex-shrink-0 font-label text-xs uppercase tracking-widest text-primary font-semibold hover:opacity-70 transition-opacity">
+          Copy
+        </button>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a id="mailto-button" href="#"
+           class="flex-1 px-6 py-4 bg-primary text-on-primary rounded-full font-headline font-bold text-center hover:opacity-90 active:scale-95 transition-all">
+          Send Email
+        </a>
+        <a id="whatsapp-button" href="#" target="_blank" rel="noopener"
+           class="flex-1 px-6 py-4 border border-outline-variant/30 text-on-surface rounded-full font-headline font-semibold text-center hover:bg-surface-container transition-all">
+          WhatsApp Me
+        </a>
+      </div>
     </div>
   </div>
+
 </body>
 </html>

@@ -1,0 +1,256 @@
+/* =========================================================
+   portfolio.css — Custom keyframes & JS-controlled classes
+   Tailwind CDN handles all utility classes in index.html
+   ========================================================= */
+
+:root {
+  --surface: #f9f6f5;
+  --surface-lowest: #ffffff;
+  --surface-low: #f3f0ef;
+  --surface-container: #eae7e7;
+  --surface-high: #e5e2e1;
+  --on-surface: #2f2e2e;
+  --on-surface-variant: #5c5b5b;
+  --primary: #00647b;
+  --primary-container: #00cffc;
+  --on-primary: #e2f6ff;
+  --outline-variant: #afacac;
+}
+
+/* ── Scroll Progress ── */
+#scroll-progress {
+  position: fixed; top: 0; left: 0;
+  height: 3px; width: 0%;
+  background: linear-gradient(90deg, #00647b, #00cffc);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ── Hero Name Char Animation ── */
+.char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: charReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes charReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Typewriter Cursor ── */
+.typewriter-cursor {
+  display: inline-block;
+  animation: blink 0.85s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── Section Fade-in (JS adds this class) ── */
+.section-revealed { opacity: 1 !important; transform: none !important; }
+
+/* ── Material Symbols ── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* ── Nav: Scrolled shadow ── */
+#navbar.scrolled {
+  box-shadow: 0 4px 24px rgba(47, 46, 46, 0.08);
+}
+
+/* ── Nav: Active link ── */
+.nav-link.active {
+  color: #00647b !important;
+  font-weight: 700;
+}
+
+/* ── Mobile Menu ── */
+#nav-links.active {
+  transform: translateX(0) !important;
+}
+#mobile-overlay.active {
+  display: block !important;
+}
+#mobile-toggle .icon-close { display: none; }
+#mobile-toggle.active .icon-menu { display: none; }
+#mobile-toggle.active .icon-close { display: inline; }
+
+/* ── Projects Grid (JS-injected) ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.project-card {
+  background: var(--surface-lowest);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16,1,0.3,1),
+              background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card.visible { opacity: 1; transform: translateY(0); }
+.project-card:hover {
+  background: var(--surface-high);
+  box-shadow: 0 20px 40px rgba(47,46,46,0.06);
+}
+.project-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, rgba(0,100,123,0.08), rgba(0,207,252,0.15));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 3rem;
+}
+.project-image img { width: 100%; height: 100%; object-fit: cover; }
+.project-content { padding: 1.5rem 2rem 2rem; }
+.project-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-bottom: 0.5rem;
+}
+.project-description {
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+.tech-tag {
+  padding: 0.25rem 0.75rem;
+  background: var(--surface-container);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  font-family: 'Inter', sans-serif;
+}
+.project-links { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+.project-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.project-link.primary { color: var(--primary); }
+.project-link.secondary { color: var(--on-surface-variant); }
+.project-link:hover { opacity: 0.7; }
+
+/* ── Blog Grid (JS-injected) ── */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.blog-card {
+  background: var(--surface-lowest);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16,1,0.3,1),
+              background-color 0.3s ease;
+}
+.blog-card.visible { opacity: 1; transform: translateY(0); }
+.blog-card:hover { background: var(--surface-high); }
+.blog-date {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.blog-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+.blog-excerpt {
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+.blog-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+.blog-link:hover { text-decoration: underline; }
+
+/* ── Cert & Award Card Reveal (JS adds .visible) ── */
+.cert-card, .award-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.cert-card.visible, .award-card.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Stat Counter Card ── */
+.stat-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.stat-item.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Modals ── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(47, 46, 46, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal-overlay.active { display: flex; }
+.modal-dialog {
+  background: var(--surface-lowest);
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 680px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(47,46,46,0.15);
+  outline: none;
+  padding: 2.5rem;
+  position: relative;
+}
+
+/* ── Error state ── */
+.error {
+  color: #b31b25;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  padding: 1rem;
+  background: #fff0f0;
+  border-radius: 0.75rem;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .char { opacity: 1; transform: none; }
+}

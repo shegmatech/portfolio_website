@@ -1,32 +1,62 @@
 [
   {
     "id": 1,
-    "title": "E-Commerce Platform",
-    "description": "A modern e-commerce platform built with React and Node.js, featuring real-time inventory management and secure payment processing.",
+    "title": "GIIA Online Examination Portal",
+    "description": "Designed and developed a full ISO-compliant online examination portal for the Global Institute of Internal Auditing — featuring structured question banks, timed exams, result tracking, and automated scoring. Improved exam administration efficiency and standardization across all courses.",
     "image": "",
-    "technologies": ["React", "Node.js", "MongoDB", "Stripe"],
-    "githubUrl": "https://github.com/yourusername/ecommerce",
-    "liveUrl": "https://demo.example.com",
+    "technologies": ["FastAPI", "Python", "HTML/CSS/JS", "SQLite", "Jinja2"],
+    "githubUrl": "",
+    "liveUrl": "https://examportal.virtualspro.com",
     "featured": true
   },
   {
     "id": 2,
-    "title": "Task Management App",
-    "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+    "title": "Automated Audit Exception Reminder",
+    "description": "Built a Python-based automation system that tracks open audit exceptions and dispatches scheduled email reminders to responsible owners, ensuring timely closure of compliance findings and reducing manual follow-up overhead at Africa Prudential Plc.",
     "image": "",
-    "technologies": ["Vue.js", "Express", "Socket.io", "PostgreSQL"],
-    "githubUrl": "https://github.com/yourusername/taskapp",
-    "liveUrl": "https://tasks.example.com",
+    "technologies": ["Python", "smtplib", "pandas", "Excel/CSV", "Scheduler"],
+    "githubUrl": "",
+    "liveUrl": "",
     "featured": true
   },
   {
     "id": 3,
-    "title": "Weather Dashboard",
-    "description": "A responsive weather dashboard that provides detailed weather information with beautiful visualizations and location-based forecasts.",
+    "title": "Corporate TIN Validation Script",
+    "description": "Developed an automated Python script that validates over 10,000 Corporate Tax Identification Numbers against the FIRS verification portal, enabling data enrichment and accurate remittance processing for the finance team.",
     "image": "",
-    "technologies": ["JavaScript", "Chart.js", "Weather API", "CSS Grid"],
-    "githubUrl": "https://github.com/yourusername/weather",
-    "liveUrl": "https://weather.example.com",
+    "technologies": ["Python", "Selenium", "requests", "pandas", "Excel"],
+    "githubUrl": "",
+    "liveUrl": "",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "Nuban Validator & Comparison Tool",
+    "description": "Built a Python tool to validate and cross-check NUBAN (Nigeria Uniform Bank Account Numbers) across datasets, ensuring data integrity and accurate account identification during audit and reconciliation processes.",
+    "image": "",
+    "technologies": ["Python", "pandas", "openpyxl", "REST API"],
+    "githubUrl": "",
+    "liveUrl": "",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "title": "1-Million QR Code Generator",
+    "description": "Generated over 1 million unique QR codes using Python for the physical identification and tracking of electricity infrastructure assets across multiple business units at BEDC Electricity Plc. Dramatically improved asset traceability and field operations.",
+    "image": "",
+    "technologies": ["Python", "qrcode", "Pillow", "pandas", "Bulk Processing"],
+    "githubUrl": "",
+    "liveUrl": "",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "Automated Excel File Splitter",
+    "description": "Developed a Python automation tool for the finance department that intelligently splits large Excel workbooks into structured sub-files based on defined criteria — saving over 50 hours of manual effort per reporting cycle.",
+    "image": "",
+    "technologies": ["Python", "openpyxl", "pandas", "xlsxwriter"],
+    "githubUrl": "",
+    "liveUrl": "",
     "featured": false
   }
 ]
