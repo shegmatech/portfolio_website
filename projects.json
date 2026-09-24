@@ -1,32 +1,12 @@
 [
   {
     "id": 1,
-    "title": "GIIA Online Examination Portal",
-    "description": "Designed and developed a full ISO-compliant online examination portal for the Global Institute of Internal Auditing — featuring structured question banks, timed exams, result tracking, and automated scoring. Improved exam administration efficiency and standardization across all courses.",
+    "title": "Certifyr",
+    "description": "Designed and built Certifyr, an online professional competence assessment platform featuring timed, randomised, anti-copy exams with instant results and verifiable, shareable Certificates of Competence — enabling individuals and organizations to validate skills and issue trusted credentials at scale.",
     "image": "",
-    "technologies": ["FastAPI", "Python", "HTML/CSS/JS", "SQLite", "Jinja2"],
+    "technologies": ["Python", "FastAPI", "PostgreSQL"],
     "githubUrl": "",
-    "liveUrl": "https://examportal.virtualspro.com",
-    "featured": true
-  },
-  {
-    "id": 2,
-    "title": "Automated Audit Exception Reminder",
-    "description": "Built a Python-based automation system that tracks open audit exceptions and dispatches scheduled email reminders to responsible owners, ensuring timely closure of compliance findings and reducing manual follow-up overhead at Africa Prudential Plc.",
-    "image": "",
-    "technologies": ["Python", "smtplib", "pandas", "Excel/CSV", "Scheduler"],
-    "githubUrl": "",
-    "liveUrl": "",
-    "featured": true
-  },
-  {
-    "id": 3,
-    "title": "Corporate TIN Validation Script",
-    "description": "Developed an automated Python script that validates over 10,000 Corporate Tax Identification Numbers against the FIRS verification portal, enabling data enrichment and accurate remittance processing for the finance team.",
-    "image": "",
-    "technologies": ["Python", "Selenium", "requests", "pandas", "Excel"],
-    "githubUrl": "",
-    "liveUrl": "",
+    "liveUrl": "https://certifyr.online",
     "featured": true
   },
   {
