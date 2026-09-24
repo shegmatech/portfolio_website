@@ -36,12 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial data
   loadProjects();
   loadBlogPosts();
-
-  // Live updates via localStorage (admin)
-  window.addEventListener('storage', (e) => {
-    if (e.key === 'portfolio_projects') loadProjects();
-    if (e.key === 'portfolio_blog') loadBlogPosts();
-  });
 });
 
 // =========================
@@ -376,27 +370,12 @@ function setupCardTilt() {
 async function loadProjects() {
   const container = document.getElementById('projects-container');
   try {
-    let projects;
-    const stored = localStorage.getItem('portfolio_projects');
-    if (stored) {
-      projects = JSON.parse(stored);
-    } else {
-      try {
-        const res = await fetch('./projects.json', { cache: 'no-cache' });
-        if (res.ok) projects = await res.json();
-        else throw new Error('File not found');
-      } catch {
-        // Fallback demo data
-        projects = [
-          { id:1, title:"E-Commerce Platform", description:"A modern e-commerce platform with real-time inventory and secure payment processing.", image:"", technologies:["React","Node.js","MongoDB","Stripe"], githubUrl:"https://github.com/yourusername/ecommerce", liveUrl:"https://demo.example.com", featured:true },
-          { id:2, title:"Task Management App", description:"Collaborative tasks with real-time updates, drag-and-drop, and team features.", image:"", technologies:["Vue.js","Express","Socket.io","PostgreSQL"], githubUrl:"https://github.com/yourusername/taskapp", liveUrl:"https://tasks.example.com", featured:true },
-          { id:3, title:"Weather Dashboard", description:"Responsive dashboard with location-based forecasts and clean charts.", image:"", technologies:["JavaScript","Chart.js","Weather API","CSS Grid"], githubUrl:"https://github.com/yourusername/weather", liveUrl:"https://weather.example.com", featured:false }
-        ];
-      }
-    }
+    const res = await fetch('./projects.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('File not found');
+    const projects = await res.json();
     renderProjects(projects);
   } catch {
-    container.innerHTML = '<div class="error">Failed to load projects. Please check your projects.json file or use the admin panel.</div>';
+    container.innerHTML = '<div class="error">Failed to load projects. Please check your projects.json file.</div>';
   }
 }
 
@@ -474,28 +453,13 @@ function renderProjects(projects) {
 async function loadBlogPosts() {
   const container = document.getElementById('blog-container');
   try {
-    let posts;
-    const stored = localStorage.getItem('portfolio_blog');
-    if (stored) {
-      posts = JSON.parse(stored);
-    } else {
-      try {
-        const res = await fetch('./blog.json', { cache: 'no-cache' });
-        if (res.ok) posts = await res.json();
-        else throw new Error('File not found');
-      } catch {
-        // Fallback demo posts
-        posts = [
-          { id:1, title:"Building Scalable React Applications", excerpt:"Best practices for large-scale React apps—architecture, state, performance.", content:"<p><strong>Full blog post content here...</strong> Include code samples, sections, and images as needed.</p>".repeat(12), date:"2025-07-20", tags:["React","JavaScript","Architecture"], published:true },
-          { id:2, title:"The Future of Web Development", excerpt:"Emerging trends: WebAssembly, serverless, and the next-gen JavaScript ecosystem.", content:"<p>Full blog post content here... Trends, predictions, and insights.</p>".repeat(10), date:"2025-07-15", tags:["Web Development","Trends","Future"], published:true },
-          { id:3, title:"CSS Grid vs Flexbox: When to Use What", excerpt:"Understand the differences with practical examples and patterns.", content:"<p>Full blog post content here... comparisons and examples.</p>".repeat(8), date:"2025-07-10", tags:["CSS","Layout","Design"], published:true }
-        ];
-      }
-    }
+    const res = await fetch('./blog.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('File not found');
+    const posts = await res.json();
     BLOG_POSTS = (posts || []).filter(p => p.published);
     renderBlogPosts(BLOG_POSTS);
   } catch {
-    container.innerHTML = '<div class="error">Failed to load blog posts. Please check your blog.json file or use the admin panel.</div>';
+    container.innerHTML = '<div class="error">Failed to load blog posts. Please check your blog.json file.</div>';
   }
 }
 
