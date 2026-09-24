@@ -6,9 +6,6 @@
 const CONTACT_EMAIL = 'shegmatech@gmail.com';
 const WHATSAPP_NUMBER = '2347036792585'; // no "+"
 
-// ---- State ----
-let BLOG_POSTS = []; // cache of published posts
-
 // Helper: smooth set body scroll lock
 function setBodyLock(locked) {
   document.body.style.overflow = locked ? 'hidden' : '';
@@ -27,15 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
   setupTimelineAnimation();
   setupCertAnimations();
   setupAwardAnimations();
-  setupDelegatedBlogClicks();
-  setupPostModal();
   setupContactModal();
   setupCVButton();
   setupContactForm();
 
   // Initial data
   loadProjects();
-  loadBlogPosts();
 });
 
 // =========================
@@ -445,114 +439,6 @@ function renderProjects(projects) {
   }, { threshold: 0.1 });
   grid.querySelectorAll('.project-card').forEach(c => cardObs.observe(c));
   setupCardTilt();
-}
-
-// =========================
-/* Blog */
-// =========================
-async function loadBlogPosts() {
-  const container = document.getElementById('blog-container');
-  try {
-    const res = await fetch('./blog.json', { cache: 'no-cache' });
-    if (!res.ok) throw new Error('File not found');
-    const posts = await res.json();
-    BLOG_POSTS = (posts || []).filter(p => p.published);
-    renderBlogPosts(BLOG_POSTS);
-  } catch {
-    container.innerHTML = '<div class="error">Failed to load blog posts. Please check your blog.json file.</div>';
-  }
-}
-
-function renderBlogPosts(posts) {
-  const container = document.getElementById('blog-container');
-  const grid = document.createElement('div');
-  grid.className = 'blog-grid';
-
-  posts.forEach((post, idx) => {
-    const formattedDate = new Date(post.date).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
-    const card = document.createElement('div');
-    card.className = 'blog-card';
-    card.style.setProperty('--i', idx);
-    card.innerHTML = `
-      <div class="blog-content">
-        <div class="blog-date">${formattedDate}</div>
-        <h3 class="blog-title">${post.title}</h3>
-        <p class="blog-excerpt">${post.excerpt}</p>
-        <a href="#" class="blog-link" data-postid="${post.id}">Read More →</a>
-      </div>`;
-    grid.appendChild(card);
-  });
-
-  container.innerHTML = '';
-  container.appendChild(grid);
-
-  // Stagger reveal
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const c = entry.target;
-        c.style.transitionDelay = `${Number(c.style.getPropertyValue('--i')) * 0.1}s`;
-        c.classList.add('visible');
-        obs.unobserve(c);
-      }
-    });
-  }, { threshold: 0.1 });
-  grid.querySelectorAll('.blog-card').forEach(c => obs.observe(c));
-}
-
-// Delegated click so it works after re-renders (no refresh needed)
-function setupDelegatedBlogClicks() {
-  const blogContainer = document.getElementById('blog-container');
-  if (!blogContainer) return;
-  if (blogContainer.dataset.listenerBound) return;
-  blogContainer.addEventListener('click', (e) => {
-    const link = e.target.closest('.blog-link');
-    if (!link) return;
-    e.preventDefault();
-    const id = Number(link.getAttribute('data-postid'));
-    if (!Number.isNaN(id)) openBlogPost(id);
-  });
-  blogContainer.dataset.listenerBound = 'true';
-}
-
-// =========================
-/* Blog Modal */
-// =========================
-function openBlogPost(postId) {
-  const post = BLOG_POSTS.find(p => p.id === postId);
-  if (!post) return;
-
-  const modal = document.getElementById('post-modal');
-  const dialog = modal.querySelector('.modal-dialog');
-
-  document.getElementById('post-modal-title').textContent = post.title;
-  const formattedDate = new Date(post.date).toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
-  document.getElementById('post-modal-meta').textContent = formattedDate + (post.tags?.length ? ` • ${post.tags.join(' · ')}` : '');
-  document.getElementById('post-modal-content').innerHTML = (post.content && post.content.trim()) ? post.content : post.excerpt;
-
-  modal.classList.add('active');
-  modal.setAttribute('aria-hidden', 'false');
-  setBodyLock(true);
-  dialog.focus();
-}
-
-function closePostModal() {
-  const modal = document.getElementById('post-modal');
-  modal.classList.remove('active');
-  modal.setAttribute('aria-hidden', 'true');
-  setBodyLock(false);
-}
-
-function setupPostModal() {
-  document.getElementById('post-modal').addEventListener('click', (e) => {
-    if (e.target.dataset.close === 'true') closePostModal();
-  });
-  document.getElementById('modal-close').addEventListener('click', closePostModal);
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && document.getElementById('post-modal').classList.contains('active')) {
-      closePostModal();
-    }
-  });
 }
 
 // =========================
